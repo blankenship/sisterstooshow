@@ -52,12 +52,11 @@
 		margin: 0 auto;
 	}
 
-
 	.poster{
 		background: url(lewisgirls.jpg) no-repeat center center;
 		background-size: cover;
-/*		min-height: 97vmin;
-*/		}
+		min-height: 97vmin;
+		}
 
 	.ticket {
 		background: #461712;
@@ -102,6 +101,11 @@
 	@media (max-width: 850px) {
 		body { 
 			grid-template-columns: 100% 100%;
+		}
+
+		.poster,
+		.ticket { 
+			display: block;
 		}
 
 </style>
