@@ -42,19 +42,27 @@ about Women, Marriage, Motherhood, Trauma, and Purpose.</title>
 
 	  gtag('config', 'UA-135909988-1');
 	</script>
+	
 	<style>
-		body {display: grid;
-grid-gap: 0;
-grid-template-columns: 50% 50%;
-margin: 0 auto;}
+	
+	body {
+		display: grid;
+		grid-gap: 0;
+		grid-template-columns: 50% 50%;
+		margin: 0 auto;
+	}
+
+	h1 { display: none; }
 
 	.poster{
-background: url(lewisgirls.jpg) no-repeat center center;
-background-size: cover;
-}
+		background: url(lewisgirls.jpg) no-repeat center center;
+		background-size: cover;
+		min-height: 100vmin;
+		}
 
 	.ticket {
-		background: #eee;
+		background: #EE6E72;
+		color: #fff;
 		font-family: Work, Poppins, sans serif;
 		padding: 30%;
 	}
@@ -66,62 +74,56 @@ background-size: cover;
 	<div class="poster"></div>
 	<div class="ticket">
 		<header>
-		<h1>Sisters, too.</h1>
-		<h2>An Evening of Music, Art & Poetry
-about Women, Marriage, Motherhood, Trauma, and Purpose</h2>
-	</header>
+			<h1>Sisters, too.</h1>
+			<h2>An Evening of Music, Art & Poetry about Women, Marriage, Motherhood, Trauma, and Purpose</h2>
+			<h3>with Mandy Blankenship & Jenny Ayers</h3>
+			<h4>Saturday, September 21 7:00pm</h4>
+			<h5>Indigo Art & Flow in the Village of West Greenville</h5>
+		</header>
 
-	<!-- Load Stripe.js on your website. -->
-			<script src="https://js.stripe.com/v3"></script>
+		<!-- Load Stripe.js on your website. -->
+		<script src="https://js.stripe.com/v3"></script>
 
-			<!-- Create a button that your customers click to complete their purchase. -->
-			<button id="checkout-button" class="center" role="link">Get Tickets</button>
-			<div id="error-message"></div>
+		<!-- Create a button that your customers click to complete their purchase. -->
+		<button id="checkout-button" class="center" role="link">Get Tickets</button>
+		<div id="error-message"></div>
 
-			<script>
-			  var stripe = Stripe('pk_live_iDZKAY11c6DKPMkAW10y1SuW', {
-			    betas: ['checkout_beta_4']
-			  });
+		<script>
+		  var stripe = Stripe('pk_live_iDZKAY11c6DKPMkAW10y1SuW', {
+		    betas: ['checkout_beta_4']
+		  });
 
-			  var checkoutButton = document.getElementById('checkout-button');
-			  checkoutButton.addEventListener('click', function () {
-			    // When the customer clicks on the button, redirect
-			    // them to Checkout.
-			    stripe.redirectToCheckout({
-			      items: [{sku: 'sku_Eer9Wdu6u3yEfI', quantity: 1}],
+		  var checkoutButton = document.getElementById('checkout-button');
+		  checkoutButton.addEventListener('click', function () {
+		    // When the customer clicks on the button, redirect
+		    // them to Checkout.
+		    stripe.redirectToCheckout({
+		      items: [{sku: 'sku_Eer9Wdu6u3yEfI', quantity: 1}],
 
-			      // Note that it is not guaranteed your customers will be redirected to this
-			      // URL *100%* of the time, it's possible that they could e.g. close the
-			      // tab between form submission and the redirect.
-			      successUrl: window.location.protocol + '//www.logoland.biz/gogologo.html',
-			      cancelUrl: window.location.protocol + '//www.logoland.biz/nogologo.html',
-			    })
-			    .then(function (result) {
-			      if (result.error) {
-			        // If `redirectToCheckout` fails due to a browser or network
-			        // error, display the localized error message to your customer.
-			        var displayError = document.getElementById('error-message');
-			        displayError.textContent = result.error.message;
-			      }
-			    });
-			  });
-			</script>
+		      // Note that it is not guaranteed your customers will be redirected to this
+		      // URL *100%* of the time, it's possible that they could e.g. close the
+		      // tab between form submission and the redirect.
+		      successUrl: window.location.protocol + '//www.logoland.biz/gogologo.html',
+		      cancelUrl: window.location.protocol + '//www.logoland.biz/nogologo.html',
+		    })
+		    .then(function (result) {
+		      if (result.error) {
+		        // If `redirectToCheckout` fails due to a browser or network
+		        // error, display the localized error message to your customer.
+		        var displayError = document.getElementById('error-message');
+		        displayError.textContent = result.error.message;
+		      }
+		    });
+		  });
+		</script>
 
-				<footer>
-		<ul>
-			<li><a href="privacypolicy.html">Privacy Policy</a></li>
-			<li><a href="legal.html">Terms & Conditions</a></li>
-			<li>&copy;2019 Blankenship Office, LLC.</li>
-		</ul>
-		
-		<ul>
-			<li><a href="mailto:logoland.biz@gmail.com">logoland.biz at gmail</a></li>
-			<li><a href="http://instagram.com/logoland.biz">Instagram</a></li>
-			<li><a href="http://twitter.com/logolanddotbiz">Twitter</a></li>
-		</ul>
-	</footer>
+		<footer>
+			<ul>
+				<li><a href="privacypolicy.html">Privacy Policy</a></li>
+				<li><a href="legal.html">Terms & Conditions</a></li>
+				<li>&copy;2019 Blankenship Office, LLC.</li>
+			</ul>
+		</footer>
 	</div>
-
-
 </body>
 </html>
