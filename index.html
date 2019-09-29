@@ -118,53 +118,9 @@
 			<h3>with <a href="http://mandyblankenship.com">Mandy Blankenship</a> & <a href="http://www.jennyayers.com">Jenny Ayers</a></h3>
 			<h4>Wednesday, Oct 9th 7:30pm</h4>
 			<h5>at <a href="https://www.mychocolatesecrets.com/">Chocolate Secrets</a> <span>in Dallas, TX</span></h5>
+			<h6>Free Admission</h6>
 			<h6>Read our <a href="https://greenvillejournal.com/2019/09/05/sisters-too-addresses-womanhood-through-song-art-poetrysisters-too-addresses-womanhood-draws-inspiration-from-me-too-movement/">Greenville Journal Interview</a></h6>
 		</header>
-
-		<!-- Load Stripe.js on your website. -->
-		<script src="https://js.stripe.com/v3"></script>
-
-		<!-- CTA -->
-		<button id="checkout-button-sku_FcNvbEaZtB5nuB" class="center" role="link">Get Your Ticket</button>
-
-		<div id="error-message"></div>
-
-		<script>
-		  var stripe = Stripe('pk_live_ab1G0aqSYxXXl2KjcQQAhoqa00qwHKlRFB');
-
-		  var checkoutButton = document.getElementById('checkout-button-sku_FcNvbEaZtB5nuB');
-		  checkoutButton.addEventListener('click', function () {
-		    // When the customer clicks on the button, redirect
-		    // them to Checkout.
-		    stripe.redirectToCheckout({
-		      items: [{sku: 'sku_FcNvbEaZtB5nuB', quantity: 1}],
-
-		      // Do not rely on the redirect to the successUrl for fulfilling
-		      // purchases, customers may not always reach the success_url after
-		      // a successful payment.
-		      // Instead use one of the strategies described in
-		      // https://stripe.com/docs/payments/checkout/fulfillment
-		      successUrl: 'http://sisterstooshow.com/success',
-		      cancelUrl: 'http://sisterstooshow.com/canceled',
-		    })
-		    .then(function (result) {
-		      if (result.error) {
-		        // If `redirectToCheckout` fails due to a browser or network
-		        // error, display the localized error message to your customer.
-		        var displayError = document.getElementById('error-message');
-		        displayError.textContent = result.error.message;
-		      }
-		    });
-		  });
-		</script>
-
-		<!-- <footer>
-			<ul>
-				<li><a href="privacypolicy.html">Privacy Policy</a></li>
-				<li><a href="legal.html">Terms & Conditions</a></li>
-				<li>&copy;2019 Blankenship Office, LLC.</li>
-			</ul>
-		</footer> -->
 	</div>
 </body>
 </html>
